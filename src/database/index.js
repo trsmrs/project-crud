@@ -1,0 +1,16 @@
+const mongoose = require('mongoose')
+
+
+function connect(){
+
+mongoose.connect('mongodb://localhost:27017/')
+const db = mongoose.connection
+db.once('open', () => {
+    console.log('Connected to database!')
+})
+db.on('error', console.error.bind(console, 'connect error'))
+
+}
+
+
+module.exports = {connect}

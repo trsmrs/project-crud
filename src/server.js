@@ -1,10 +1,12 @@
 const express = require('express')
-const { listen } = require('express/lib/application')
 const path = require('path')
+const db = require('./database')
 
 const app = express()
 
 
+// conexão com o db
+db.connect()
 
 // definindo o template engine
 app.set('view engine', 'ejs')
