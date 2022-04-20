@@ -8,6 +8,8 @@ const app = express()
 
 // definindo o template engine
 app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, 'views'))
+
 
 
 // definindo os arquivos públicos
@@ -18,16 +20,15 @@ app.use(express.urlencoded({ extended: true }))
 
 // rotas
 app.get('/', (req, res)=>{
-    res.render('index',{
+    res.render('index', {
         title: 'Titulo Teste'
     })
 })
 
 
 // 404 not found (error)
-
-app.use((res, res)=>{
-    res.setEncoding('Página não encontrada!')
+app.use((req, res) => {
+    res.send('Página não encontrada!')
 })
 
 
@@ -35,5 +36,4 @@ app.use((res, res)=>{
 // executando o servidor
 
 const port = process.env.PORT || 8080
-
-app.listen(`Server is listening on ${port}`)
+app.listen(port, () => console.log(`Server is listening on ${port}`))
