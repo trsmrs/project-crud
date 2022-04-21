@@ -1,7 +1,7 @@
 const express = require('express')
 const path = require('path')
 const db = require('./database')
-
+const routes = require('./routes')
 const app = express()
 
 
@@ -20,12 +20,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: true }))
 
 
-// rotas
-app.get('/', (req, res)=>{
-    res.render('index', {
-        title: 'Titulo Teste'
-    })
-})
+// definindo as rotas
+app.use('/', routes)
 
 
 // 404 not found (error)
@@ -34,8 +30,6 @@ app.use((req, res) => {
 })
 
 
-
 // executando o servidor
-
 const port = process.env.PORT || 8080
 app.listen(port, () => console.log(`Server is listening on ${port}`))
