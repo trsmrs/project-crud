@@ -1,3 +1,16 @@
 body{
-    background-color: rgb(185, 151, 109);
+    background-color: rgb(158, 105, 34);
+}
+
+.formulario input{
+    padding: 7px;
+    margin: 10px;
+    display: block;
+}
+
+.formulario button{
+    margin-left: 118px;
+    margin-top: 30px;
+    border-radius: 5px;
+    padding: 4px;
 }
