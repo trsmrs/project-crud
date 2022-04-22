@@ -5,6 +5,11 @@
 </head>
 <body>
     <h1><%= title %></h1>
+    <%- include('./partials/navBar.ejs') %>  
+
+    <% if (typeof msg !== 'undefined') {%>
+        <%= msg %>
+    <%}%>
 
     <form class='formulario' action="/register/add" method="POST">
 
