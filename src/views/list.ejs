@@ -10,7 +10,8 @@
     <% users.forEach((user)=>{ %>
         <li>
             <%= user.name %> - <%= user.age %> - <%= user.email %> -
-            <a href="/edit?id=<%= user._id %>">[Editar]</a>
+            <a href="/edit?id=<%= user._id %>">[Editar]</a> - 
+            <a href="/remove/<%= user._id %>">[Remover]</a>
         </li>
     <%})%>
 
